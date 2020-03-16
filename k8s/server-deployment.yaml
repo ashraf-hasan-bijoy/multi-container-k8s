@@ -29,6 +29,9 @@ spec:
             - name: PGUSER
               value: postgres
             - name: PGPASSWORD
-              value: password  
+              valueFrom:
+                  secretKeyRef: 
+                    name: postgress-password
+                    key: PGPASSWORD
             - name: PGDATABASE
               value: postgres
